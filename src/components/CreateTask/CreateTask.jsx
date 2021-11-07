@@ -29,29 +29,37 @@ const CreateTask = () => {
         taskInfo.time = time?.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
         console.log(taskInfo);
 
-        const updatedTaskList = [...taskList]
-        updatedTaskList.push(taskInfo)
-        setTaskList(updatedTaskList)
-        localStorage.setItem('taskList', JSON.stringify(updatedTaskList))
+        if(taskInfo.title && taskInfo.date && taskInfo.time){
+
+            const updatedTaskList = [...taskList]
+            updatedTaskList.push(taskInfo)
+            setTaskList(updatedTaskList)
+            localStorage.setItem('taskList', JSON.stringify(updatedTaskList))
+            alert("Task crated successfully!")
+
+        }
+        else{
+            alert("Please fill all the required field!")
+        }
     }
 
 
     return (
         <div className='form_container'>
-        
         <>
             <h1>Task Creator</h1>
-            <TextField onChange={handleInput} id="outlined-basic" margin="normal" label="Task Name" variant="outlined" name='title'/>
+            <TextField onChange={handleInput} id="outlined-basic" margin="normal" label="Task Name" variant="outlined" name='title' required />
             <TextField onChange={handleInput} id="outlined-multiline-static" label="Task Description (Optional)" multiline rows={4} variant="outlined" name='description'/>
             <br/>
             <LocalizationProvider dateAdapter={AdapterDateFns} >
                 <DatePicker 
+                    
                     label="Select Date"
                     value={date}
                     onChange={(newValue) => {
                         setDate(newValue);
                     }}
-                    renderInput={(params) => <TextField onChange={handleInput} name='date' {...params} />}
+                    renderInput={(params) => <TextField onChange={handleInput} name='date' {...params} required />}
                 />
                 <br/>
                 <TimePicker
@@ -60,7 +68,7 @@ const CreateTask = () => {
                     onChange={(newValue) => {
                         setTime(newValue);
                     }}
-                    renderInput={(params) => <TextField {...params} />}
+                    renderInput={(params) => <TextField {...params} required />}
                 />
             </LocalizationProvider>
 

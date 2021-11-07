@@ -12,13 +12,13 @@ Or, run this command for Linux OS
 Clone the project
 
 ```bash
-  git clone https://github.com/Shadow-Chaser/credence-task.git
+  git clone https://github.com/Shadow-Chaser/task1--task-viewer.git
 ```
 
 Go to the project directory
 
 ```bash
-  cd credence-task
+  cd task1--task-viewer
 ```
 
 Install dependencies
