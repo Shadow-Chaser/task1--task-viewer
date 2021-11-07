@@ -1,0 +1,12 @@
+#drawer_toggler{
+    position: absolute;
+    right: 0;
+    margin-right: 50px;
+    margin-top: 10px;
+}
+
+.drawer_buttons{
+    display: flex;
+    justify-content: space-between;
+    margin:7px;
+}

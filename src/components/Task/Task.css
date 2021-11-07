@@ -1,0 +1,26 @@
+.task_container{
+    width: 300px;
+    margin: 5px;
+    border: 3px solid rgb(0, 195, 255);
+    border-radius: 7px;
+    height: auto;
+    padding: 10px 10px 0px 10px;
+}
+
+.date_time{
+    display: flex;
+    justify-content: space-between;
+}
+
+.task_title{
+margin: 0px 0px 6px 0px;
+
+}
+.task_date{
+    margin-top: 0px;
+}
+.task_time{
+    margin-top: 0px;
+}
+
+
